@@ -27,7 +27,7 @@ public class CatalogController {
         return String.format("It's Working in User Service on PORT %s.", environment.getProperty("local.server.port"));
     }
 
-    @GetMapping("/users")
+    @GetMapping("/catalogs")
     public ResponseEntity<?> getCatalogs() {
         Iterable<CatalogEntity> userList = catalogService.getAllCatalogs();
         List<ResponseCatalog> result = new ArrayList<>();
