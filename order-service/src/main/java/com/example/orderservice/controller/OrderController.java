@@ -30,7 +30,7 @@ public class OrderController {
         return String.format("It's Working in User Service on PORT %s.", environment.getProperty("local.server.port"));
     }
 
-    @PostMapping("/{userId}/orders}")
+    @PostMapping("/{userId}/orders")
     public ResponseEntity<?> createOrder(@PathVariable("userId") String userId, @RequestBody RequestOrder orderDetails) {
         ModelMapper mapper = new ModelMapper();
         mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
@@ -42,7 +42,7 @@ public class OrderController {
         return ResponseEntity.status(HttpStatus.CREATED).body(responseUser);
     }
 
-    @GetMapping("/{userId}/orders}")
+    @GetMapping("/{userId}/orders")
     public ResponseEntity<?> createOrder(@PathVariable("userId") String userId) {
         Iterable<OrderEntity> orderList = orderService.getOrdersByUserId(userId);
 
