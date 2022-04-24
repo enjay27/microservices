@@ -18,7 +18,6 @@ spring:
       ddl-auto: update
     show-sql: true
     generate-ddl: true
-    defer-datasource-initialization: true
 
 eureka:
   instance:
