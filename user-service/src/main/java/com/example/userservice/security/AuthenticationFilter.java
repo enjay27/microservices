@@ -28,8 +28,8 @@ import java.util.Objects;
 
 @Slf4j
 public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
-    private UserService userService;
-    private Environment environment;
+    private final UserService userService;
+    private final Environment environment;
 
     public AuthenticationFilter(AuthenticationManager authenticationManager,
                                 UserService userService,
