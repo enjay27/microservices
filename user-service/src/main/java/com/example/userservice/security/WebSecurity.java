@@ -28,10 +28,8 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
         http.headers().frameOptions().disable();
     }
 
-    private AuthenticationFilter getAuthenticationFilter() throws Exception {
-        AuthenticationFilter authenticationFilter = new AuthenticationFilter();
-        authenticationFilter.setAuthenticationManager(authenticationManager());
-        return authenticationFilter;
+    private AuthenticationFilter  getAuthenticationFilter() throws Exception {
+        return new AuthenticationFilter(authenticationManager(), userService, environment);
     }
 
     @Override
