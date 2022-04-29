@@ -8,11 +8,15 @@ spring:
     port: 5672
     username: guest
     password: guest
+  profiles:
+    active: native
   cloud:
     config:
       server:
-        git:
-          uri: https://github.com/enjay27/trou-config.git
+        native:
+          search-locations: file://${user.home}/IdeaProjects/native-file-repo
+#        git:
+#          uri: https://github.com/enjay27/microservices-config
 management:
   endpoints:
     web:
